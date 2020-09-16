@@ -63,12 +63,13 @@ const App = inject("store")(
 
       _renderAll(obj) {
         if (obj.length === 1) return <Segment>{[Tree.renderItem(obj[0].root)]}</Segment>;
+        //console.log(obj.length)
 
         return (
           <div className="ls-renderall">
             {obj.map(c => (
               <div className="ls-fade">
-                <Segment>{[Tree.renderItem(c.root)]}</Segment>
+                <Segment createdBy={c.createdBy}>{[Tree.renderItem(c.root)]}</Segment>
               </div>
             ))}
           </div>
